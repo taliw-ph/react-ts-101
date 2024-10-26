@@ -4,7 +4,7 @@ import TodoItem from "./TodoItem";
 
 type TodoListProps = {
   todos: Todo[];
-  toggleTodo: (id: number) => void;
+  toggleTodo: (id: number, currentStatus: boolean) => void;
   deleteTodo: (id: number) => void;
 };
 

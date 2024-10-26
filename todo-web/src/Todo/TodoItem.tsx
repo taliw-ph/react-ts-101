@@ -3,7 +3,7 @@ import { Todo } from "./type";
 
 type TodoItemProps = {
   todo: Todo;
-  toggleTodo: (id: number) => void;
+  toggleTodo: (id: number, currentStatus: boolean) => void;
   deleteTodo: (id: number) => void;
 };
 
@@ -14,7 +14,7 @@ const TodoItem: React.FC<TodoItemProps> = (props) => {
         listStyleType: "none",
         margin: "10px 0",
       }}
-      onClick={() => props.toggleTodo(props.todo.id)}
+      onClick={() => props.toggleTodo(props.todo.id, props.todo.completed)}
     >
       {props.todo.completed ? "✅" : "⬜️"}
       <span
