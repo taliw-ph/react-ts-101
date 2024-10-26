@@ -1,3 +1,5 @@
+.DS_Store
+
 # typescript
 typescript/node_modules
 
@@ -20,3 +22,16 @@ todo-api!/tmp/storage/.keep
 todo-api/config/master.key
 
 # todo-web
+todo-web/node_modules
+todo-web/.pnp
+todo-web/.pnp.js
+todo-web/coverage
+todo-web/build
+todo-web/.DS_Store
+todo-web/.env.local
+todo-web/.env.development.local
+todo-web/.env.test.local
+todo-web/.env.production.local
+todo-web/npm-debug.log*
+todo-web/yarn-debug.log*
+todo-web/yarn-error.log*
