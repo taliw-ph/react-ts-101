@@ -1,0 +1,22 @@
+# typescript
+typescript/node_modules
+
+# todo-api
+todo-api/.bundle
+todo-api/.env*
+todo-api!/.env*.erb
+todo-api/log/*
+todo-api/tmp/*
+todo-api!/log/.keep
+todo-api!/tmp/.keep
+todo-api/tmp/pids/*
+todo-api!/tmp/pids/
+todo-api!/tmp/pids/.keep
+todo-api/storage/*
+todo-api!/storage/.keep
+todo-api/tmp/storage/*
+todo-api!/tmp/storage/
+todo-api!/tmp/storage/.keep
+todo-api/config/master.key
+
+# todo-web
