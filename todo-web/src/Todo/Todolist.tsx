@@ -5,6 +5,7 @@ import TodoItem from "./TodoItem";
 type TodoListProps = {
   todos: Todo[];
   toggleTodo: (id: number) => void;
+  deleteTodo: (id: number) => void;
 };
 
 const TodoList: React.FC<TodoListProps> = (props) => {
@@ -12,7 +13,12 @@ const TodoList: React.FC<TodoListProps> = (props) => {
 
   for (const todo of props.todos) {
     todoItems.push(
-      <TodoItem key={todo.id} todo={todo} toggleTodo={props.toggleTodo} />
+      <TodoItem
+        key={todo.id}
+        todo={todo}
+        toggleTodo={props.toggleTodo}
+        deleteTodo={props.deleteTodo}
+      />
     );
   }
 

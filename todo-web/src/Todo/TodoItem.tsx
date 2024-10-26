@@ -4,21 +4,40 @@ import { Todo } from "./type";
 type TodoItemProps = {
   todo: Todo;
   toggleTodo: (id: number) => void;
+  deleteTodo: (id: number) => void;
 };
 
 const TodoItem: React.FC<TodoItemProps> = (props) => {
-  const { todo, toggleTodo } = props;
-  const { id, text } = todo;
-
   return (
     <li
       style={{
-        textDecoration: props.todo.completed ? "line-through" : "none",
-        cursor: "pointer",
+        listStyleType: "none",
+        margin: "10px 0",
       }}
-      onClick={() => toggleTodo(id)}
+      onClick={() => props.toggleTodo(props.todo.id)}
     >
-      {text}
+      {props.todo.completed ? "✅" : "⬜️"}
+      <span
+        style={{
+          textDecoration: props.todo.completed ? "line-through" : "none",
+          cursor: "pointer",
+          marginLeft: "10px",
+        }}
+      >
+        {props.todo.text}
+      </span>
+      <button
+        style={{
+          marginLeft: "10px",
+          color: "red",
+        }}
+        onClick={(e) => {
+          e.stopPropagation();
+          props.deleteTodo(props.todo.id);
+        }}
+      >
+        Delete
+      </button>
     </li>
   );
 };
